@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JavaRegister:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="JavaRegister-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JavaRegister:war exploded" />
+    </root>
+  </artifact>
+</component>
