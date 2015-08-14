@@ -13,11 +13,9 @@ import soccer.model.Player;
 import java.util.Map;
 
 @Controller
-    @RequestMapping(value = "/register")
     public class RegisterController {
 
-
-        @RequestMapping(method = RequestMethod.GET)
+        @RequestMapping(value = "/register",method = RequestMethod.GET)
         public String viewRegistration(Map<String, Object> model) {
             Player playerForm = new Player();
             model.put("playerForm", playerForm);
@@ -25,17 +23,10 @@ import java.util.Map;
             return "Registration";
         }
 
-        @RequestMapping(method = RequestMethod.POST, value ="/register")
-        public String processRegistration(@ModelAttribute("playerForm") Player player,
-                                          Map model) {
+    @RequestMapping(value ="/register",method = RequestMethod.POST)
+    public String processRegistration(@ModelAttribute("playerForm") Player player,
+                                      Map model) {
 
-//            model.addAttribute("username", player.getUsername());
-//            model.addAttribute("lastname", player.getLastname());
-//            model.addAttribute("age", player.getAge());
-//            model.addAttribute("salary", player.getSalary());
-//            model.addAttribute("country", player.getCountry());
-//            model.addAttribute("position", player.getPosition());
-//
 
 // for testing purpose:
             System.out.println("First name: " + player.getUsername());
