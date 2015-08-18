@@ -38,6 +38,7 @@ public class PlayerController {
 
     @RequestMapping(value="/registerPlayer", method=POST)
     public String processRegistration(
+            @RequestParam(value="countryOfBirth", defaultValue = "CA") String countries,
             @RequestParam(value="position", defaultValue="Goalkeeper") Position position,
             @RequestParam(value="salary", defaultValue="0") BigDecimal salary,
             @RequestParam(value="goals", defaultValue="0") int goals,
@@ -46,6 +47,7 @@ public class PlayerController {
             HttpSession session
             ) {
         Statistics statistics=new Statistics(goals,bookings);
+        player.setCountryOfBirth(countries);
         player.setStatistics(statistics);
         player.setPosition(position);
         player.setAnnualSalary(salary);
