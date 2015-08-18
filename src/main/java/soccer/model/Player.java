@@ -2,72 +2,91 @@ package soccer.model;
 /**
  * Created by clementearismendi on 2015-08-10.
  */
+
+import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
+
+@Component
 public class Player {
+	private String firstName;
+	private String lastName;
+	private Integer age;
+	private String countryOfBirth;
+	private BigDecimal annualSalary;
+	private Position position;
+	private Statistics statistics;
 
-        private String username;
-        private String lastname;
-        private int age;
-        private double salary;
-        private String position;
-        private String country;
+	public Player() {}
 
-    public Player(String username, String lastname, int age, double salary, String position, String country) {
-        this.username = username;
-        this.lastname = lastname;
-        this.age = age;
-        this.salary = salary;
-        this.position = position;
-        this.country = country;
-    }
+	public Player(String firstName, String lastName, Integer age, String countryOfBirth, BigDecimal annualSalary, Position position, Statistics statistics) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.countryOfBirth = countryOfBirth;
+		this.annualSalary = annualSalary;
+		this.position = position;
+		this.statistics = statistics;
+	}
 
-    public Player() {
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setFirstName(String firstName) {
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+		this.firstName = firstName;
+	}
 
-    public String getLastname() {
-        return lastname;
-    }
+	public String getLastName() {
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+		return lastName;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public void setLastName(String lastName) {
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+		this.lastName = lastName;
+	}
 
-    public double getSalary() {
-        return salary;
-    }
+	public Integer getAge() {
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
+		return age;
+	}
 
-    public String getPosition() {
-        return position;
-    }
+	public void setAge(Integer age) {
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
+		this.age = age;
+	}
+	public String getCountryOfBirth() {
 
-    public String getCountry() {
-        return country;
-    }
+		return countryOfBirth;
+	}
+	public void setCountryOfBirth(String countryOfBirth) {
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+		this.countryOfBirth = countryOfBirth;
+	}
+
+	public BigDecimal getAnnualSalary() {
+		return annualSalary;
+	}
+
+	public void setAnnualSalary(BigDecimal annualSalary) {
+		this.annualSalary = annualSalary;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+
+	public Statistics getStatistics() {
+		return statistics;
+	}
+
+	public void setStatistics(Statistics statistics) {
+		this.statistics = statistics;
+	}
 }
